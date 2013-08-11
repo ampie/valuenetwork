@@ -17,3 +17,5 @@ media/logos/*.jpg
 media/avatars/*.jpg
 media/logos/*.png
 media/avatars/*.png
+valuenetwork/static/bootstrap
+valuenetwork/static/pinax
