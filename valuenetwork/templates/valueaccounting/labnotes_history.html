@@ -1,7 +1,7 @@
 {% extends "site_base.html" %}
 
 {% load i18n %}
-{% load thumbnail %}
+<!--load thumbnail-->
 
 {% block head_title %}{% trans "Labnotes History" %}{% endblock %}
 {% block extra_head %}
@@ -75,7 +75,7 @@ li {
 	                                <a href="{% url resource resource_id=resource.id %}">{{ resource }}</a>
                                 </li>
 		                        {% if resource.photo %}
-		                        	<img src="{% thumbnail resource.photo photo_size %}" />
+		                        	<!-- img src=" thumbnail resource.photo photo_size " /-->
 	                        	{% elif resource.photo_url %}
 		                        	<img src="{{ resource.photo_url }}" width="128" height="96" />
 		                        {% endif %}

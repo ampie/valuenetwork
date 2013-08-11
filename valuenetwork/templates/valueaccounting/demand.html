@@ -26,7 +26,7 @@
 				<ul>
 				    {% for order in orders %}
 						<li>
-                            <a href="{% url order_schedule order_id=order.id %}">{{ order }}</a> {% trans "created by" %} {{ order.created_by }}
+                            <a href="{% url order_schedule order_id=order.id %}">{{ order.id }}</a> {% trans "created by" %} {{ order.created_by }}
 							{% if user = order.created_by or user.is_superuser %}
                             	<a class="btn btn-warning" href="{% url delete_order_confirmation order_id=order.id %}">{% trans "Delete" %}</a>
 							{% endif %}

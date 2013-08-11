@@ -11,7 +11,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.db.models import Q
 from django.template.defaultfilters import slugify
 
-from easy_thumbnails.fields import ThumbnailerImageField
+# from easy_thumbnails.fields import ThumbnailerImageField
 
 
 """Models based on REA
@@ -243,8 +243,8 @@ class EconomicAgent(models.Model):
     longitude = models.FloatField(_('longitude'), default=0.0, blank=True, null=True)
     reputation = models.DecimalField(_('reputation'), max_digits=8, decimal_places=2, 
         default=Decimal("0.00"))
-    photo = ThumbnailerImageField(_("photo"),
-        upload_to='photos', blank=True, null=True)
+#     photo = ThumbnailerImageField(_("photo"),
+#         upload_to='photos', blank=True, null=True)
     photo_url = models.CharField(_('photo url'), max_length=255, blank=True)
     slug = models.SlugField(_("Page name"), editable=False)
     created_date = models.DateField(_('created date'), default=datetime.date.today)
@@ -409,8 +409,8 @@ class EconomicResourceType(models.Model):
     unit_of_use = models.ForeignKey(Unit, blank=True, null=True,
         verbose_name=_('unit of use'), related_name="units_of_use",
         help_text=_('if this resource has different units of use and inventory, this is the unit of use'))
-    photo = ThumbnailerImageField(_("photo"),
-        upload_to='photos', blank=True, null=True)
+#     photo = ThumbnailerImageField(_("photo"),
+#         upload_to='photos', blank=True, null=True)
     photo_url = models.CharField(_('photo url'), max_length=255, blank=True)
     url = models.CharField(_('url'), max_length=255, blank=True)
     description = models.TextField(_('description'), blank=True, null=True)
@@ -1043,8 +1043,8 @@ class EconomicResource(models.Model):
     quality = models.DecimalField(_('quality'), max_digits=3, decimal_places=0, 
         default=Decimal("0"), blank=True, null=True)
     notes = models.TextField(_('notes'), blank=True, null=True)
-    photo = ThumbnailerImageField(_("photo"),
-        upload_to='photos', blank=True, null=True)
+#     photo = ThumbnailerImageField(_("photo"),
+#         upload_to='photos', blank=True, null=True)
     photo_url = models.CharField(_('photo url'), max_length=255, blank=True)
     created_date = models.DateField(_('created date'), default=datetime.date.today)
     created_by = models.ForeignKey(User, verbose_name=_('created by'),

@@ -8,6 +8,8 @@ local_settings.py
 *.swp
 *.swo
 *.log
+*.war
+*.class
 bin/
 include/
 lib/

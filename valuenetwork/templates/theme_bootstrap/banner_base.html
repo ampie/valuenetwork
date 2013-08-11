@@ -1,7 +1,7 @@
 {% extends "site_base.html" %}
 
 {% load i18n %}
-{% load thumbnail %}
+<!--load thumbnail-->
 
 {% block body_base %}
     <div class="container">
@@ -65,7 +65,7 @@
 							<li>
 								<b>{{ item.resource_type.name }}:</b> {% trans "created" %} {{ item.due_date }}
 								{% if item.resource_type.photo %}
-		                        	<img src="{% thumbnail item.resource_type.photo photo_size %}" />
+		                        	<!-- img src=" thumbnail item.resource_type.photo photo_size " /-->
 	                        	{% elif item.resource_type.photo_url %}
 	                        	    <img src="{{ item.resource_type.photo_url }}" width="128" height="96" />
 		                        {% endif %}

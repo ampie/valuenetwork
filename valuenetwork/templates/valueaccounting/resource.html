@@ -2,7 +2,7 @@
 
 {% load i18n %}
 {% load bootstrap_tags %}
-{% load thumbnail %}
+<!--load thumbnail-->
 
 {% block head_title %}{% trans "Resource" %}: {{ resource }}{% endblock %}
 
@@ -80,7 +80,7 @@
                     {% if resource.photo %}
 	                	<tr>
 	                        <th style="text-align: right; vertical-align: top; ">{% trans "Photo" %}</th>
-	                        <td><img src="{% thumbnail resource.photo photo_size %}" /></td>
+	                        <td><!-- img src=" thumbnail resource.photo photo_size " /--></td>
                         </tr>
                 	{% elif resource.photo_url %}
                         <tr>

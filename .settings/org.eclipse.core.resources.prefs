@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//valuenetwork/__init__.py=utf-8
+encoding//valuenetwork/valueaccounting/migrations/0002_auto__add_agentresourcetype__add_processtyperesourcetype__add_field_ec.py=utf-8
+encoding//valuenetwork/valueaccounting/migrations/0003_auto__add_associationtype__add_agentassociation__add_reciprocity__add_.py=utf-8
+encoding//valuenetwork/valueaccounting/migrations/0037_auto__add_field_economicresource_photo.py=utf-8
+encoding//valuenetwork/valueaccounting/migrations/0040_auto__add_field_order_created_date__add_field_order_changed_date__add_.py=utf-8

@@ -2,7 +2,7 @@
 
 {% load i18n %}
 {% load bootstrap_tags %}
-{% load thumbnail %}
+<!--load thumbnail-->
 
 {% block head_title %}{% trans "Inventory" %}{% endblock %}
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
@@ -49,7 +49,7 @@ container li {
                     <div class="res">
                      <a href="{% url resource resource_id=resource.id %}">{{ resource.label }}</a>
 		             {% if resource.photo %}
-		            	<img src="{% thumbnail resource.photo photo_size %}" />
+		            	<!--img src=" thumbnail resource.photo photo_size " /-->
 	            	 {% elif resource.photo_url %}
 		            	<img src="{{ resource.photo_url }}" width="128" height="96" />
 		             {% endif %}

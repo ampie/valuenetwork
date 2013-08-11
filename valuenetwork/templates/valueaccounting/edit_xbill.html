@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 {% load i18n %}
-{% load thumbnail %}
+<!--load thumbnail-->
 {% load bootstrap_tags %}
 
 {% block head_title %}{% trans " Edit Recipe for " %} {{ resource_type }}{% endblock %}
@@ -126,7 +126,7 @@ ul {
 				{{ resource_type }}
 			{% endif %}
 			{% if resource_type.photo %}
-				<img src="{% thumbnail resource_type.photo big_photo_size %}" />
+				<!-- img src=" thumbnail resource_type.photo big_photo_size " /-->
 			{% elif resource_type.photo_url %}
         	    		<img src="{{ resource_type.photo_url }}" width="200" height="128" />
 			{% endif %}
@@ -227,7 +227,7 @@ ul {
 					{% endif %}
 
 					{% if xbill_object.photo %}
-						<img src="{% thumbnail xbill_object.photo photo_size %}" />
+						<!--img src=" thumbnail xbill_object.photo photo_size %}" /-->
 					{% elif node.xbill_object.photo_url %}
 		        	    <img src="{{ node.xbill_object.photo_url }}" width="128" height="96" />
 					{% endif %}
