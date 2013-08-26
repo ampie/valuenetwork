@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="smm" name="smm" uri="http://schema.omg.org/spec/SMM/1.0">
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.AbstractMeasureElement" name="AbstractMeasureElement" isAbstract="true">
+    <generalization xmi:id="_NQMdkA6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="smm.Accumulator" name="Accumulator">
+    <ownedLiteral xmi:id="smm.Accumulator.sum" name="sum"/>
+    <ownedLiteral xmi:id="smm.Accumulator.maximum" name="maximum"/>
+    <ownedLiteral xmi:id="smm.Accumulator.minimum" name="minimum"/>
+    <ownedLiteral xmi:id="smm.Accumulator.average" name="average"/>
+    <ownedLiteral xmi:id="smm.Accumulator.standardDeviation" name="standardDeviation" literal="standardDeviation"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Annotation" name="Annotation">
+    <generalization xmi:id="_NQMdkQ6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+    <ownedAttribute xmi:id="smm.Annotation.text" name="text" isOrdered="true">
+      <type xmi:type="uml.PrimitiveType" href="smm.String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Argument" name="Argument">
+    <generalization xmi:id="_NQMdkg6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+    <ownedAttribute xmi:id="smm.Argument.type" name="type" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Argument.value" name="value" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Attribute" name="Attribute">
+    <generalization xmi:id="_NQMdkw6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+    <ownedAttribute xmi:id="smm.Attribute.tag" name="tag" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Attribute.value" name="value" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Base1MeasureRelationship" name="Base1MeasureRelationship">
+    <generalization xmi:id="_NQMdlA6GEeOM4eeknTYa-g" general="smm.MeasureRelationship"/>
+    <ownedAttribute xmi:id="smm.Base1MeasureRelationship.from" name="from" isOrdered="true" association="_NQMdmw6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.BinaryMeasure"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Base1MeasureRelationship.to" name="to" isOrdered="true" association="_NQNEpw6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Base1MeasurementRelationship" name="Base1MeasurementRelationship">
+    <generalization xmi:id="_NQMdlQ6GEeOM4eeknTYa-g" general="smm.MeasurementRelationship"/>
+    <ownedAttribute xmi:id="smm.Base1MeasurementRelationship.from" name="from" isOrdered="true" association="_NQMdng6GEeOM4eeknTYa-g"/>
+    <ownedAttribute xmi:id="smm.Base1MeasurementRelationship.to" name="to" isOrdered="true" association="_NQNErQ6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Base2MeasureRelationship" name="Base2MeasureRelationship">
+    <generalization xmi:id="_NQMdlg6GEeOM4eeknTYa-g" general="smm.MeasureRelationship"/>
+    <ownedAttribute xmi:id="smm.Base2MeasureRelationship.from" name="from" isOrdered="true" association="_NQMdnA6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.BinaryMeasure"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Base2MeasureRelationship.to" name="to" isOrdered="true" association="_NQNEqA6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Base2MeasurementRelationship" name="Base2MeasurementRelationship">
+    <generalization xmi:id="_NQMdlw6GEeOM4eeknTYa-g" general="smm.MeasurementRelationship"/>
+    <ownedAttribute xmi:id="smm.Base2MeasurementRelationship.from" name="from" isOrdered="true" association="_NQMdnw6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.BinaryMeasurement"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Base2MeasurementRelationship.to" name="to" isOrdered="true" association="_NQNErg6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.BaseMeasureRelationship" name="BaseMeasureRelationship">
+    <generalization xmi:id="_NQMdmA6GEeOM4eeknTYa-g" general="smm.MeasureRelationship"/>
+    <ownedAttribute xmi:id="smm.BaseMeasureRelationship.from" name="from" isOrdered="true" association="_NQNEoA6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.CollectiveMeasure"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.BaseMeasureRelationship.to" name="to" isOrdered="true" association="_NQNEpg6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.BaseMeasurementRelationship" name="BaseMeasurementRelationship">
+    <generalization xmi:id="_NQMdmQ6GEeOM4eeknTYa-g" general="smm.MeasurementRelationship"/>
+    <ownedAttribute xmi:id="smm.BaseMeasurementRelationship.from" name="from" isOrdered="true" association="_NQNEog6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.CollectiveMeasurement"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.BaseMeasurementRelationship.to" name="to" isOrdered="true" association="_NQNErA6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.BinaryMeasure" name="BinaryMeasure">
+    <generalization xmi:id="_NQMdmg6GEeOM4eeknTYa-g" general="smm.DimensionalMeasure"/>
+    <ownedAttribute xmi:id="smm.BinaryMeasure.functor" name="functor" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.BinaryMeasure.baseMeasure1To" name="baseMeasure1To" type="smm.Base1MeasureRelationship" isOrdered="true" association="_NQMdmw6GEeOM4eeknTYa-g"/>
+    <ownedAttribute xmi:id="smm.BinaryMeasure.baseMeasure2To" name="baseMeasure2To" type="smm.Base2MeasureRelationship" isOrdered="true" association="_NQMdnA6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.BinaryMeasurement" name="BinaryMeasurement">
+    <generalization xmi:id="_NQMdnQ6GEeOM4eeknTYa-g" general="smm.DimensionalMeasurement"/>
+    <ownedAttribute xmi:id="smm.BinaryMeasurement.baseMeasurement1To" name="baseMeasurement1To" type="smm.Base1MeasurementRelationship" isOrdered="true" aggregation="composite" association="_NQMdng6GEeOM4eeknTYa-g"/>
+    <ownedAttribute xmi:id="smm.BinaryMeasurement.baseMeasurement2To" name="baseMeasurement2To" type="smm.Base2MeasurementRelationship" isOrdered="true" aggregation="composite" association="_NQMdnw6GEeOM4eeknTYa-g"/>
+    <ownedAttribute xmi:id="smm.BinaryMeasurement.isBaseSupplied" name="isBaseSupplied" type="smm.Boolean" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="smm.Boolean" name="Boolean"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.CategoryRelationship" name="CategoryRelationship">
+    <generalization xmi:id="_NQMdoA6GEeOM4eeknTYa-g" general="smm.SmmRelationship"/>
+    <ownedAttribute xmi:id="smm.CategoryRelationship.from" name="from" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.MeasureCategory"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.CategoryRelationship.to" name="to" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.AbstractMeasureElement"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Characteristic" name="Characteristic">
+    <generalization xmi:id="_NQMdoQ6GEeOM4eeknTYa-g" general="smm.AbstractMeasureElement"/>
+    <ownedAttribute xmi:id="smm.Characteristic.parent" name="parent" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.CollectiveMeasure" name="CollectiveMeasure">
+    <generalization xmi:id="_NQMdog6GEeOM4eeknTYa-g" general="smm.DimensionalMeasure"/>
+    <ownedAttribute xmi:id="smm.CollectiveMeasure.accumulator" name="accumulator" type="smm.Accumulator" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.CollectiveMeasure.baseMeasureTo" name="baseMeasureTo" type="smm.BaseMeasureRelationship" isOrdered="true" association="_NQNEoA6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.CollectiveMeasurement" name="CollectiveMeasurement">
+    <generalization xmi:id="_NQNEoQ6GEeOM4eeknTYa-g" general="smm.DimensionalMeasurement"/>
+    <ownedAttribute xmi:id="smm.CollectiveMeasurement.accumulator" name="accumulator" type="smm.Accumulator" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.CollectiveMeasurement.isBaseSupplied" name="isBaseSupplied" type="smm.Boolean" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.CollectiveMeasurement.baseMeasurementTo" name="baseMeasurementTo" type="smm.BaseMeasurementRelationship" isOrdered="true" association="_NQNEog6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2gA6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Count" name="Count">
+    <generalization xmi:id="_NQNEow6GEeOM4eeknTYa-g" general="smm.DirectMeasurement"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Counting" name="Counting">
+    <generalization xmi:id="_NQNEpA6GEeOM4eeknTYa-g" general="smm.DirectMeasure"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="smm.Date" name="Date"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.DimensionalMeasure" name="DimensionalMeasure">
+    <generalization xmi:id="_NQNEpQ6GEeOM4eeknTYa-g" general="smm.Measure"/>
+    <ownedAttribute xmi:id="smm.DimensionalMeasure.unit" name="unit" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.DimensionalMeasure.baseMeasureFrom" name="baseMeasureFrom" type="smm.BaseMeasureRelationship" isOrdered="true" association="_NQNEpg6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.DimensionalMeasure.baseMeasure1From" name="baseMeasure1From" type="smm.Base1MeasureRelationship" isOrdered="true" association="_NQNEpw6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.DimensionalMeasure.baseMeasure2From" name="baseMeasure2From" type="smm.Base2MeasureRelationship" isOrdered="true" association="_NQNEqA6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.DimensionalMeasure.rescaleTo" name="rescaleTo" type="smm.RescaleMeasureRelationship" isOrdered="true" association="_NQNEqQ6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.DimensionalMeasure.rankingFrom" name="rankingFrom" type="smm.RankingMeasureRelationship" isOrdered="true" association="_NQNEqg6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2gQ6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.DimensionalMeasurement" name="DimensionalMeasurement" isAbstract="true">
+    <generalization xmi:id="_NQNEqw6GEeOM4eeknTYa-g" general="smm.Measurement"/>
+    <ownedAttribute xmi:id="smm.DimensionalMeasurement.value" name="value" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.Double"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.DimensionalMeasurement.baseMeasurementFrom" name="baseMeasurementFrom" type="smm.BaseMeasurementRelationship" isOrdered="true" association="_NQNErA6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2gg6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.DimensionalMeasurement.baseMeasurement1From" name="baseMeasurement1From" type="smm.Base1MeasurementRelationship" isOrdered="true" association="_NQNErQ6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2gw6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.DimensionalMeasurement.baseMeasurement2From" name="baseMeasurement2From" type="smm.Base2MeasurementRelationship" isOrdered="true" association="_NQNErg6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2hA6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.DimensionalMeasurement.rescaleTo" name="rescaleTo" type="smm.RescaleMeasurementRelationship" isOrdered="true" association="_NQNErw6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2hQ6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.DimensionalMeasurement.rankingFrom" name="rankingFrom" type="smm.RankingMeasurementRelationship" isOrdered="true" association="_NQNEsA6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2hg6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.DirectMeasure" name="DirectMeasure">
+    <generalization xmi:id="_NQNEsQ6GEeOM4eeknTYa-g" general="smm.DimensionalMeasure"/>
+    <ownedAttribute xmi:id="smm.DirectMeasure.operation" name="operation" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.DirectMeasurement" name="DirectMeasurement">
+    <generalization xmi:id="_NQNEsg6GEeOM4eeknTYa-g" general="smm.DimensionalMeasurement"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="smm.Double" name="Double"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.EquivalentMeasureRelationship" name="EquivalentMeasureRelationship">
+    <generalization xmi:id="_NQNEsw6GEeOM4eeknTYa-g" general="smm.MeasureRelationship"/>
+    <ownedAttribute xmi:id="smm.EquivalentMeasureRelationship.mapping" name="mapping" type="smm.Operation" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.EquivalentMeasureRelationship.from" name="from" isOrdered="true" association="_NQNEuw6GEeOM4eeknTYa-g"/>
+    <ownedAttribute xmi:id="smm.EquivalentMeasureRelationship.to" name="to" isOrdered="true" association="_NQNEvA6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.EquivalentMeasurementRelationship" name="EquivalentMeasurementRelationship">
+    <generalization xmi:id="_NQNEtA6GEeOM4eeknTYa-g" general="smm.MeasurementRelationship"/>
+    <ownedAttribute xmi:id="smm.EquivalentMeasurementRelationship.from" name="from" type="smm.Measurement" isOrdered="true" association="_NQNEtQ6GEeOM4eeknTYa-g"/>
+    <ownedAttribute xmi:id="smm.EquivalentMeasurementRelationship.to" name="to" isOrdered="true" association="_NQNrtw6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Grade" name="Grade">
+    <generalization xmi:id="_NQNEtg6GEeOM4eeknTYa-g" general="smm.Measurement"/>
+    <ownedAttribute xmi:id="smm.Grade.isBaseSupplied" name="isBaseSupplied" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Grade.value" name="value" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Grade.rankingTo" name="rankingTo" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.RankingMeasurementRelationship"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Measure" name="Measure" isAbstract="true">
+    <generalization xmi:id="_NQNEtw6GEeOM4eeknTYa-g" general="smm.AbstractMeasureElement"/>
+    <ownedAttribute xmi:id="smm.Measure.category" name="category" type="smm.MeasureCategory" isOrdered="true" association="_NQNEuA6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measure.trait" name="trait" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.Characteristic"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measure.scope" name="scope" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.Scope"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measure.measureLabelFormat" name="measureLabelFormat" type="smm.String" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Measure.refinementTo" name="refinementTo" type="smm.RefinementMeasureRelationship" isOrdered="true" association="_NQNEuQ6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measure.refinementFrom" name="refinementFrom" type="smm.RefinementMeasureRelationship" isOrdered="true" association="_NQNEug6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measure.equivalentTo" name="equivalentTo" type="smm.EquivalentMeasureRelationship" isOrdered="true" association="_NQNEuw6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measure.equivalentFrom" name="equivalentFrom" type="smm.EquivalentMeasureRelationship" isOrdered="true" association="_NQNEvA6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measure.recursiveTo" name="recursiveTo" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Measure.recursiveFrom" name="recursiveFrom" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.RecursiveMeasureRelationship"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measure.measurementLabelFormat" name="measurementLabelFormat" type="smm.String" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Measure.visible" name="visible" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Measure.measureRelationships" name="measureRelationships" type="smm.MeasureRelationship" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measure.defaultQuery" name="defaultQuery" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Measure.inbound" name="inbound" type="smm.MeasureRelationship" isOrdered="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2hw6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measure.outbound" name="outbound" type="smm.MeasureRelationship" isOrdered="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2iA6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.MeasureCategory" name="MeasureCategory">
+    <generalization xmi:id="_NQNrsA6GEeOM4eeknTYa-g" general="smm.AbstractMeasureElement"/>
+    <ownedAttribute xmi:id="smm.MeasureCategory.category" name="category" type="smm.MeasureCategory" isOrdered="true" association="_NQNrsQ6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.MeasureCategory.categoryElement" name="categoryElement" type="smm.MeasureCategory" isOrdered="true" association="_NQNrsQ6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.MeasureCategory.categoryMeasure" name="categoryMeasure" type="smm.Measure" isOrdered="true" association="_NQNEuA6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.MeasureLibrary" name="MeasureLibrary">
+    <generalization xmi:id="_NQNrsg6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+    <ownedAttribute xmi:id="smm.MeasureLibrary.measureElements" name="measureElements" type="smm.AbstractMeasureElement" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.MeasureLibrary.categoryRelationships" name="categoryRelationships" type="smm.CategoryRelationship" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.MeasureRelationship" name="MeasureRelationship" isAbstract="true">
+    <generalization xmi:id="_NQNrsw6GEeOM4eeknTYa-g" general="smm.SmmRelationship"/>
+    <ownedAttribute xmi:id="smm.MeasureRelationship.measurandQuery" name="measurandQuery" type="smm.Operation" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Measurement" name="Measurement" isAbstract="true">
+    <generalization xmi:id="_NQNrtA6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+    <ownedAttribute xmi:id="smm.Measurement.error" name="error" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Measurement.measurand" name="measurand" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.MofElement"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measurement.breakValue" name="breakValue" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Measurement.refinementTo" name="refinementTo" type="smm.RefinementMeasurementRelationship" isOrdered="true" association="_NQNrtQ6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measurement.refinementFrom" name="refinementFrom" type="smm.RefinementMeasurementRelationship" isOrdered="true" association="_NQNrtg6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2iQ6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measurement.equivalentTo" name="equivalentTo" type="smm.EquivalentMeasurementRelationship" isOrdered="true" association="_NQNEtQ6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measurement.equivalentFrom" name="equivalentFrom" type="smm.EquivalentMeasurementRelationship" isOrdered="true" association="_NQNrtw6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2ig6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measurement.recursiveTo" name="recursiveTo" isOrdered="true" association="_NQNryA6GEeOM4eeknTYa-g"/>
+    <ownedAttribute xmi:id="smm.Measurement.recursiveFrom" name="recursiveFrom" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.RecursiveMeasurementRelationship"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measurement.measurementRelationships" name="measurementRelationships" type="smm.MeasurementRelationship" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measurement.inbound" name="inbound" type="smm.MeasurementRelationship" isOrdered="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2iw6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Measurement.outbound" name="outbound" type="smm.MeasurementRelationship" isOrdered="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2jA6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.MeasurementRelationship" name="MeasurementRelationship" isAbstract="true">
+    <generalization xmi:id="_NQNruA6GEeOM4eeknTYa-g" general="smm.SmmRelationship"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.MofElement" name="MofElement"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.NamedMeasure" name="NamedMeasure">
+    <generalization xmi:id="_NQNruQ6GEeOM4eeknTYa-g" general="smm.DimensionalMeasure"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.NamedMeasurement" name="NamedMeasurement">
+    <generalization xmi:id="_NQNrug6GEeOM4eeknTYa-g" general="smm.DimensionalMeasurement"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.OCLOperation" name="OCLOperation">
+    <generalization xmi:id="_NQNruw6GEeOM4eeknTYa-g" general="smm.AbstractMeasureElement"/>
+    <ownedAttribute xmi:id="smm.OCLOperation.context" name="context" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.OCLOperation.body" name="body" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Observation" name="Observation">
+    <generalization xmi:id="_NQNrvA6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+    <ownedAttribute xmi:id="smm.Observation.observer" name="observer" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Observation.tool" name="tool" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Observation.whenObserved" name="whenObserved" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.Date"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Observation.scopes" name="scopes" type="smm.ObservationScope" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Observation.observedMeasures" name="observedMeasures" type="smm.ObservedMeasure" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Observation.requestedMeasures" name="requestedMeasures" type="smm.SmmElement" isOrdered="true">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Observation.measurementRelations" name="measurementRelations" type="smm.SmmRelationship" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Observation.arguments" name="arguments" type="smm.Argument" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.ObservationScope" name="ObservationScope">
+    <generalization xmi:id="_NQNrvQ6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+    <ownedAttribute xmi:id="smm.ObservationScope.scopeUri" name="scopeUri" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.ObservedMeasure" name="ObservedMeasure">
+    <generalization xmi:id="_NQNrvg6GEeOM4eeknTYa-g" general="smm.SmmRelationship"/>
+    <ownedAttribute xmi:id="smm.ObservedMeasure.measure" name="measure" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.ObservedMeasure.measurements" name="measurements" type="smm.Measurement" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Operation" name="Operation">
+    <generalization xmi:id="_NQNrvw6GEeOM4eeknTYa-g" general="smm.AbstractMeasureElement"/>
+    <ownedAttribute xmi:id="smm.Operation.language" name="language" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Operation.body" name="body" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Ranking" name="Ranking">
+    <generalization xmi:id="_NQNrwA6GEeOM4eeknTYa-g" general="smm.Measure"/>
+    <ownedAttribute xmi:id="smm.Ranking.interval" name="interval" type="smm.RankingInterval" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.Ranking.rankingTo" name="rankingTo" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.RankingMeasureRelationship"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RankingInterval" name="RankingInterval">
+    <generalization xmi:id="_NQNrwQ6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+    <ownedAttribute xmi:id="smm.RankingInterval.maximumEndpoint" name="maximumEndpoint" type="smm.Double" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.RankingInterval.maximumOpen" name="maximumOpen" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.RankingInterval.minimumEndpoint" name="minimumEndpoint" type="smm.Double" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.RankingInterval.minimumOpen" name="minimumOpen" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.RankingInterval.symbol" name="symbol" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RankingMeasureRelationship" name="RankingMeasureRelationship">
+    <generalization xmi:id="_NQNrwg6GEeOM4eeknTYa-g" general="smm.MeasureRelationship"/>
+    <ownedAttribute xmi:id="smm.RankingMeasureRelationship.from" name="from" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.Ranking"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.RankingMeasureRelationship.to" name="to" isOrdered="true" association="_NQNEqg6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RankingMeasurementRelationship" name="RankingMeasurementRelationship">
+    <generalization xmi:id="_NQNrww6GEeOM4eeknTYa-g" general="smm.MeasurementRelationship"/>
+    <ownedAttribute xmi:id="smm.RankingMeasurementRelationship.from" name="from" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.Grade"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.RankingMeasurementRelationship.to" name="to" isOrdered="true" association="_NQNEsA6GEeOM4eeknTYa-g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RatioMeasure" name="RatioMeasure">
+    <generalization xmi:id="_NQNrxA6GEeOM4eeknTYa-g" general="smm.BinaryMeasure"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RatioMeasurement" name="RatioMeasurement">
+    <generalization xmi:id="_NQNrxQ6GEeOM4eeknTYa-g" general="smm.BinaryMeasurement"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RecursiveMeasureRelationship" name="RecursiveMeasureRelationship">
+    <generalization xmi:id="_NQNrxg6GEeOM4eeknTYa-g" general="smm.MeasureRelationship"/>
+    <ownedAttribute xmi:id="smm.RecursiveMeasureRelationship.from" name="from" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.RecursiveMeasureRelationship.to" name="to" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RecursiveMeasurementRelationship" name="RecursiveMeasurementRelationship">
+    <generalization xmi:id="_NQNrxw6GEeOM4eeknTYa-g" general="smm.MeasurementRelationship"/>
+    <ownedAttribute xmi:id="smm.RecursiveMeasurementRelationship.from" name="from" type="smm.Measurement" isOrdered="true" association="_NQNryA6GEeOM4eeknTYa-g"/>
+    <ownedAttribute xmi:id="smm.RecursiveMeasurementRelationship.to" name="to" isOrdered="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RefinementMeasureRelationship" name="RefinementMeasureRelationship">
+    <generalization xmi:id="_NQNryQ6GEeOM4eeknTYa-g" general="smm.MeasureRelationship"/>
+    <ownedAttribute xmi:id="smm.RefinementMeasureRelationship.from" name="from" isOrdered="true" association="_NQNEuQ6GEeOM4eeknTYa-g"/>
+    <ownedAttribute xmi:id="smm.RefinementMeasureRelationship.to" name="to" isOrdered="true" association="_NQNEug6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.Measure"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RefinementMeasurementRelationship" name="RefinementMeasurementRelationship">
+    <generalization xmi:id="_NQNryg6GEeOM4eeknTYa-g" general="smm.MeasurementRelationship"/>
+    <ownedAttribute xmi:id="smm.RefinementMeasurementRelationship.from" name="from" type="smm.Measurement" isOrdered="true" association="_NQNrtQ6GEeOM4eeknTYa-g"/>
+    <ownedAttribute xmi:id="smm.RefinementMeasurementRelationship.to" name="to" isOrdered="true" association="_NQNrtg6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.Measurement"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RescaledMeasure" name="RescaledMeasure">
+    <generalization xmi:id="_NQNryw6GEeOM4eeknTYa-g" general="smm.DimensionalMeasure"/>
+    <ownedAttribute xmi:id="smm.RescaledMeasure.formula" name="formula" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.RescaledMeasure.rescaleFrom" name="rescaleFrom" type="smm.RescaleMeasureRelationship" isOrdered="true" association="_NQNrzA6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RescaleMeasureRelationship" name="RescaleMeasureRelationship">
+    <generalization xmi:id="_NQOSwA6GEeOM4eeknTYa-g" general="smm.MeasureRelationship"/>
+    <ownedAttribute xmi:id="smm.RescaleMeasureRelationship.to" name="to" isOrdered="true" association="_NQNrzA6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.RescaledMeasure"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.RescaleMeasureRelationship.from" name="from" isOrdered="true" association="_NQNEqQ6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.DimensionalMeasure"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RescaledMeasurement" name="RescaledMeasurement">
+    <generalization xmi:id="_NQOSwQ6GEeOM4eeknTYa-g" general="smm.DimensionalMeasurement"/>
+    <ownedAttribute xmi:id="smm.RescaledMeasurement.isBaseSupplied" name="isBaseSupplied" type="smm.Boolean" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.RescaledMeasurement.rescaleFrom" name="rescaleFrom" type="smm.RescaleMeasurementRelationship" isOrdered="true" association="_NQOSwg6GEeOM4eeknTYa-g">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NQL2jQ6GEeOM4eeknTYa-g" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.RescaleMeasurementRelationship" name="RescaleMeasurementRelationship">
+    <generalization xmi:id="_NQOSww6GEeOM4eeknTYa-g" general="smm.MeasurementRelationship"/>
+    <ownedAttribute xmi:id="smm.RescaleMeasurementRelationship.to" name="to" isOrdered="true" association="_NQOSwg6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.RescaledMeasurement"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.RescaleMeasurementRelationship.from" name="from" isOrdered="true" association="_NQNErw6GEeOM4eeknTYa-g">
+      <type xmi:type="uml.Class" href="smm.DimensionalMeasurement"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.Scope" name="Scope">
+    <generalization xmi:id="_NQOSxA6GEeOM4eeknTYa-g" general="smm.AbstractMeasureElement"/>
+    <ownedAttribute xmi:id="smm.Scope.class" name="class" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Scope.recognizer" name="recognizer" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.Scope.breakCondition" name="breakCondition" isOrdered="true">
+      <type xmi:type="uml.Class" href="smm.Operation"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.SmmElement" name="SmmElement" isAbstract="true">
+    <ownedAttribute xmi:id="smm.SmmElement.attributes" name="attributes" type="smm.Attribute" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.SmmElement.annotations" name="annotations" type="smm.Annotation" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.SmmElement.name" name="name" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.SmmElement.shortDescription" name="shortDescription" type="smm.String" isOrdered="true"/>
+    <ownedAttribute xmi:id="smm.SmmElement.description" name="description" isOrdered="true">
+      <type xmi:type="uml.PrimitiveType" href="smm.String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.SmmModel" name="SmmModel">
+    <generalization xmi:id="_NQOSxQ6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+    <ownedAttribute xmi:id="smm.SmmModel.observations" name="observations" type="smm.Observation" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="smm.SmmModel.librairies" name="librairies" type="smm.MeasureLibrary" isOrdered="true" aggregation="composite">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0ZejoPqlEeK4f4SpIZjYHw" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="smm.SmmRelationship" name="SmmRelationship" isAbstract="true">
+    <generalization xmi:id="_NQOSxg6GEeOM4eeknTYa-g" general="smm.SmmElement"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="smm.String" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="smm.Timestamp" name="Timestamp"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQMdmw6GEeOM4eeknTYa-g" memberEnd="smm.BinaryMeasure.baseMeasure1To smm.Base1MeasureRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQMdnA6GEeOM4eeknTYa-g" memberEnd="smm.BinaryMeasure.baseMeasure2To smm.Base2MeasureRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQMdng6GEeOM4eeknTYa-g" memberEnd="smm.BinaryMeasurement.baseMeasurement1To smm.Base1MeasurementRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQMdnw6GEeOM4eeknTYa-g" memberEnd="smm.BinaryMeasurement.baseMeasurement2To smm.Base2MeasurementRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEoA6GEeOM4eeknTYa-g" memberEnd="smm.CollectiveMeasure.baseMeasureTo smm.BaseMeasureRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEog6GEeOM4eeknTYa-g" memberEnd="smm.CollectiveMeasurement.baseMeasurementTo smm.BaseMeasurementRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEpg6GEeOM4eeknTYa-g" memberEnd="smm.DimensionalMeasure.baseMeasureFrom smm.BaseMeasureRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEpw6GEeOM4eeknTYa-g" memberEnd="smm.DimensionalMeasure.baseMeasure1From smm.Base1MeasureRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEqA6GEeOM4eeknTYa-g" memberEnd="smm.DimensionalMeasure.baseMeasure2From smm.Base2MeasureRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEqQ6GEeOM4eeknTYa-g" memberEnd="smm.DimensionalMeasure.rescaleTo smm.RescaleMeasureRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEqg6GEeOM4eeknTYa-g" memberEnd="smm.DimensionalMeasure.rankingFrom smm.RankingMeasureRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNErA6GEeOM4eeknTYa-g" memberEnd="smm.DimensionalMeasurement.baseMeasurementFrom smm.BaseMeasurementRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNErQ6GEeOM4eeknTYa-g" memberEnd="smm.DimensionalMeasurement.baseMeasurement1From smm.Base1MeasurementRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNErg6GEeOM4eeknTYa-g" memberEnd="smm.DimensionalMeasurement.baseMeasurement2From smm.Base2MeasurementRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNErw6GEeOM4eeknTYa-g" memberEnd="smm.DimensionalMeasurement.rescaleTo smm.RescaleMeasurementRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEsA6GEeOM4eeknTYa-g" memberEnd="smm.DimensionalMeasurement.rankingFrom smm.RankingMeasurementRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEtQ6GEeOM4eeknTYa-g" memberEnd="smm.EquivalentMeasurementRelationship.from smm.Measurement.equivalentTo"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEuA6GEeOM4eeknTYa-g" memberEnd="smm.Measure.category smm.MeasureCategory.categoryMeasure"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEuQ6GEeOM4eeknTYa-g" memberEnd="smm.Measure.refinementTo smm.RefinementMeasureRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEug6GEeOM4eeknTYa-g" memberEnd="smm.Measure.refinementFrom smm.RefinementMeasureRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEuw6GEeOM4eeknTYa-g" memberEnd="smm.Measure.equivalentTo smm.EquivalentMeasureRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNEvA6GEeOM4eeknTYa-g" memberEnd="smm.Measure.equivalentFrom smm.EquivalentMeasureRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNrsQ6GEeOM4eeknTYa-g" memberEnd="smm.MeasureCategory.category smm.MeasureCategory.categoryElement"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNrtQ6GEeOM4eeknTYa-g" memberEnd="smm.Measurement.refinementTo smm.RefinementMeasurementRelationship.from"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNrtg6GEeOM4eeknTYa-g" memberEnd="smm.Measurement.refinementFrom smm.RefinementMeasurementRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNrtw6GEeOM4eeknTYa-g" memberEnd="smm.Measurement.equivalentFrom smm.EquivalentMeasurementRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNryA6GEeOM4eeknTYa-g" memberEnd="smm.RecursiveMeasurementRelationship.from smm.Measurement.recursiveTo"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQNrzA6GEeOM4eeknTYa-g" memberEnd="smm.RescaledMeasure.rescaleFrom smm.RescaleMeasureRelationship.to"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NQOSwg6GEeOM4eeknTYa-g" memberEnd="smm.RescaledMeasurement.rescaleFrom smm.RescaleMeasurementRelationship.to"/>
+</uml:Package>

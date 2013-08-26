@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:emof="http://schema.omg.org/spec/MOF/2.0/emof.xml"
+    xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="smm" name="smm" uri="http://schema.omg.org/spec/SMM/1.0">
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="smm.Boolean" name="Boolean"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="smm.Date" name="Date"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="smm.Double" name="Double"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="smm.String" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="smm.Timestamp" name="Timestamp"/>
+</uml:Package>
